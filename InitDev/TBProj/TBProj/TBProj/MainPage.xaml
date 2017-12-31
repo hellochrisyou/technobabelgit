@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:InitXamarinPOC"
+             x:Class="TBProj.MainPage"
+             Style="{StaticResource pageStyle}"
+             Title="">
+  <StackLayout Orientation="Vertical">
+
+    <ListView
+            x:Name="nameList"
+            Margin="0,20,0,0"
+            HasUnevenRows="True"
+            ItemSelected="onSelect"
+            SeparatorVisibility="None">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+
+            <Grid Padding="10,10,10,10">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="78"></RowDefinition>
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+              </Grid.ColumnDefinitions>
+              <Image
+                     Grid.Row="0"
+                     Grid.Column="1"
+                     WidthRequest="300"
+                     Source="lightbubble.png"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand"
+                     Aspect="Fill" />
+              <Label
+                  Grid.Row="0"
+                  Grid.Column="1"
+                  Margin="50,10,21,10"
+                  HorizontalOptions="StartAndExpand"
+                  VerticalOptions="Start"
+                  TextColor="#000000"
+                  Text="{Binding nameList}"
+                  FontSize="12" />
+            </Grid>
+
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+
+    <Button
+        x:Name="awaitButton"
+        Margin="20"
+        Text="START LISTENING"
+        VerticalOptions="End"
+        Clicked="Button_Clicked"
+        HorizontalOptions="Center"
+    Style="{StaticResource MainButtonStyle}" />
+
+  </StackLayout>
+</ContentPage>

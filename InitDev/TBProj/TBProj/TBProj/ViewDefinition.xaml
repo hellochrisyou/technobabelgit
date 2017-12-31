@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="TBProj.ViewDefinition"
+             Title="View Definition"
+             Style="{StaticResource pageStyle}"
+             BackgroundColor="#303030">
+
+  <ContentPage.Content>
+    <ScrollView>
+    <StackLayout>
+      <Label x:Name="FloatingTermName" Style="{StaticResource EntryFloatingLabel}" Margin="34, 0, 0, 8"  Text ="Term"/>
+      <controls:ExtendedEntry
+          x:Name="termVar"
+          InputTransparent="true"
+          Style="{StaticResource DefaultEntry}"
+          Margin ="30, 0, 30, 0" />
+      <Label x:Name="FloatingDefinition" Style="{StaticResource EntryFloatingLabel}" Margin="34, 0, 0, 8"  Text ="Definition"/>
+      <Editor
+          x:Name="definitionVar"
+          InputTransparent="true"
+          Style="{StaticResource DefaultEntry}"
+          Margin ="30, 0, 30, 0"
+          VerticalOptions="FillAndExpand"/>
+    </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>

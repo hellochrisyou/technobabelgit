@@ -1,0 +1,15 @@
+C:\Users\zanek\OneDrive\Documents\SpeechToText\SpeechToText\bin\Debug\SpeechToText.dll
+C:\Users\zanek\OneDrive\Documents\SpeechToText\SpeechToText\bin\Debug\SpeechToText.pdb
+C:\Users\zanek\OneDrive\Documents\SpeechToText\SpeechToText\bin\Debug\SpeechToText.SpeechToText.apk
+C:\Users\zanek\OneDrive\Documents\SpeechToText\SpeechToText\bin\Debug\SpeechToText.SpeechToText-Signed.apk
+C:\Users\zanek\OneDrive\Documents\SpeechToText\SpeechToText\obj\Debug\SpeechToText.dll
+C:\Users\zanek\OneDrive\Documents\SpeechToText\SpeechToText\obj\Debug\SpeechToText.pdb
+C:\Users\zanek\OneDrive\Documents\SpeechToText\SpeechToText\obj\Debug\android\bin\SpeechToText.SpeechToText.apk
+C:\Users\zanek\OneDrive\Documents\SpeechToText\SpeechToText\obj\Debug\res\layout\main.xml
+C:\Users\zanek\OneDrive\Documents\SpeechToText\SpeechToText\obj\Debug\res\values\strings.xml
+C:\Users\zanek\OneDrive\Documents\SpeechToText\SpeechToText\obj\Debug\res\drawable\icon.png
+C:\Users\zanek\OneDrive\Documents\SpeechToText\SpeechToText\obj\Debug\R.cs.flag
+C:\Users\zanek\OneDrive\Documents\SpeechToText\SpeechToText\obj\Debug\uploadflags.txt
+C:\Users\zanek\OneDrive\Documents\SpeechToText\SpeechToText\bin\Debug\SpeechToText.dll.mdb
+C:\Users\zanek\OneDrive\Documents\SpeechToText\SpeechToText\obj\Debug\android\assets\SpeechToText.dll.mdb
+C:\Users\zanek\OneDrive\Documents\SpeechToText\SpeechToText\obj\Debug\SpeechToText.csprojResolveAssemblyReference.cache

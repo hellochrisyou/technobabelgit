@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="TBProj.HelpMenu"
+             Title  ="Help Menu"
+             Style="{StaticResource pageStyle}"
+             BackgroundColor="#303030">
+
+  <ContentPage>
+    <StackLayout Orientation="Vertical">
+      <Grid
+        RowSpacing="0"
+        Margin="47,0,0,0">
+        <Grid.RowDefinitions>
+        <RowDefinition Height="30"/>
+        <RowDefinition Height="215"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="130"/>
+        <ColumnDefinition Width="130"/>
+        </Grid.ColumnDefinitions>
+        <Frame
+          Padding="1"
+          BackgroundColor="Black"
+          Grid.Row="1"
+          Grid.Column="0">
+          <ff:CachedImage
+            Source="HelpMainMenu1.png"/>
+        </Frame>
+        <Frame
+          Padding="1"
+          BackgroundColor="Black"
+          Grid.Row="1"
+          Grid.Column="1">
+          <ff:CachedImage
+              Source="HelpMainMenu2.png"/>
+        </Frame>
+      </Grid>
+      <StackLayout>
+        <Label
+          Text="Main Menu"
+          Margin="0,10,0,20"
+          TextColor="White"
+          VerticalOptions="Start"
+          HorizontalOptions="Center"
+          FontAttributes = "Bold"/>
+        <Label
+          Margin="10"
+          Text="Click on &quot;Start Listening&quot;(1) to start the recorder.  All terminology words in your company's database will be recognized.  After 2 seconds of silence, the recorder will automatically stop recording and display the recognized terms in the bubbles (2).  You can toggle between &quot;Start Listening&quot; and &quot;Stop Listening&quot; by clicking the button if you choose to stop recording while the recorder is on (3).  If there are more than 3 term bubbles, scroll up to see previous bubbles(4)."
+          TextColor="White"
+          VerticalOptions="Start"
+          HorizontalOptions="Center"/>
+      </StackLayout>
+    </StackLayout>
+  </ContentPage>
+
+  <ContentPage>
+    <StackLayout>
+      <Grid
+        RowSpacing="0"
+        Margin="55,0,0,0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="30"/>
+          <RowDefinition Height="208"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="120"/>
+          <ColumnDefinition Width="120"/>
+        </Grid.ColumnDefinitions>
+        <Frame
+          Padding="1"
+          BackgroundColor="Black"
+          Grid.Row="1"
+          Grid.Column="0">
+            <ff:CachedImage
+               Source="HelpPreHamburger.png"/>
+        </Frame>
+        <ff:CachedImage
+          Source="HelpHamburger.png"
+          Grid.Row="1"
+          Grid.Column="1"/>
+      </Grid>
+      <StackLayout>
+        <Label
+          Margin="0,10,0,20"
+          Text="Hamburger Menu"
+          TextColor="White"
+          VerticalOptions="Center"
+          HorizontalOptions="Center"
+          FontAttributes = "Bold"/>
+        <Label
+          Margin="10"
+          Text="Click on the Hamburger Menu button located in the upper left corner (1).  In the Hamburger Menu, select the page you would like to navigate to (2)."
+          TextColor="White"
+          VerticalOptions="Start"
+          HorizontalOptions="Center"/>
+      </StackLayout>
+    </StackLayout>
+  </ContentPage>
+
+  <ContentPage>
+    <StackLayout>
+      <Grid 
+        RowSpacing="0" 
+        Margin="60,0,0,0">
+        <Grid.RowDefinitions>
+        <RowDefinition Height="30"/>
+        <RowDefinition Height="198"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="115"/>
+        <ColumnDefinition Width="115"/>
+        </Grid.ColumnDefinitions>
+        <Frame
+          Padding="1"
+          BackgroundColor="Black"
+          Grid.Row="1"
+          Grid.Column="0">
+            <ff:CachedImage
+               Source="HelpCreateTerm1.png"/>
+        </Frame>
+        <Frame
+          Padding="1"
+          BackgroundColor="Black"
+          Grid.Row="1"
+          Grid.Column="1">
+            <ff:CachedImage
+              Source="HelpCreateTerm2.png"/>
+        </Frame>
+      </Grid>
+      <StackLayout>
+        <Label
+          Margin="0,20,0,20"
+          Text="Create Terminology (Admin)"
+          TextColor="White"
+          VerticalOptions="Center"
+          HorizontalOptions="Center"
+          FontAttributes = "Bold"/>
+        <Label
+          Margin="10"
+          Text="Click the Create Button (1).  Enter your Terminology Name and Definition (2) and click Create (3)."
+          TextColor="White"
+          VerticalOptions="Start"
+          HorizontalOptions="Center"/>
+      </StackLayout>
+    </StackLayout>
+  </ContentPage>
+
+  <ContentPage>
+    <StackLayout>
+      <Grid
+        RowSpacing="0"
+        Margin="55,0,0,0">
+        <Grid.RowDefinitions>
+        <RowDefinition Height="30"/>
+        <RowDefinition Height="208"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="120"/>
+        <ColumnDefinition Width="120"/>
+        </Grid.ColumnDefinitions>
+        <Frame
+          Padding="1"
+          BackgroundColor="Black"
+          Grid.Row="1"
+          Grid.Column="0">
+          <ff:CachedImage
+            Source="HelpEditTerm1.png"/>
+        </Frame>
+        <Frame          
+          Padding="1"
+          BackgroundColor="Black"
+          Grid.Row="1"
+          Grid.Column="1">
+          <ff:CachedImage
+            Source="HelpEditTerm2.png"/>
+        </Frame>
+      </Grid>
+      <StackLayout>
+        <Label
+          Margin="0,10,0,20"
+          Text="Edit Terminology (Admin)"
+          TextColor="White"
+          VerticalOptions="Center"
+          HorizontalOptions="Center"
+          FontAttributes = "Bold"/>
+        <Label
+          Margin="10"
+          Text="Enter the terminology you would like to edit (1).  Select the term (2) and you will be navigated to the Edit Terminology Screen.  Enter the term definition (3).  Choose Active Status (3) and click Update (4)."
+          TextColor="White"
+          VerticalOptions="Start"
+          HorizontalOptions="Center"/>
+      </StackLayout>
+    </StackLayout>
+  </ContentPage>
+
+  <ContentPage>
+    <StackLayout Orientation="Vertical">
+      <Grid
+        RowSpacing="0"
+        ColumnSpacing="6">
+        <Grid.RowDefinitions>
+        <RowDefinition Height="30"/>
+        <RowDefinition Height="202"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="120*"/>
+        <ColumnDefinition Width="120*"/>
+        <ColumnDefinition Width="120*"/>
+        </Grid.ColumnDefinitions>        
+        <Frame
+          Padding="1"
+          BackgroundColor="Black"
+          HorizontalOptions="CenterAndExpand"
+          Grid.Row="1"
+          Grid.Column="0">
+          <ff:CachedImage
+              Source="HelpViewDefinition1.png"/>
+        </Frame>
+        <ff:CachedImage
+          Source="HelpPreViewDefinition2.png"
+          HorizontalOptions="CenterAndExpand"
+          Grid.Row="1"
+          Grid.Column="1"/>
+        <Frame
+          HorizontalOptions="CenterAndExpand"
+          Padding="1"
+          BackgroundColor="Black"
+          Grid.Row="1"
+          Grid.Column="2">
+          <ff:CachedImage
+             Source="HelpViewDefinition.png"/>
+        </Frame>
+      </Grid>
+      <StackLayout>
+        <Label
+          Margin="0,10,0,20"
+          Text="View Terminology Definition"
+          TextColor="White"
+          VerticalOptions="Center"
+          HorizontalOptions="Center"
+          FontAttributes = "Bold"
+          Grid.Row ="2"
+          Grid.Column="1"/>
+        <Label
+          Margin="10"
+          Text="You can view a terminology by clicking the corresponding bubble (1).  If you would like to view the last term definition viewed, you may click on the View Last Definition selection in the Hamburger Menu (2).  You cannot view a terminology from the Hamburger Menu if you have not viewed a terminology before."
+          TextColor="White"
+          VerticalOptions="Start"
+          HorizontalOptions="Center"
+          Grid.Row ="3"
+          Grid.Column="1"/>
+      </StackLayout>
+    </StackLayout>
+  </ContentPage>
+
+  <ContentPage>
+    <StackLayout>
+      <Grid
+        RowSpacing="0"
+        Margin="60,0,0,0">
+        <Grid.RowDefinitions>
+        <RowDefinition Height="30"/>
+        <RowDefinition Height="198"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="115"/>
+        <ColumnDefinition Width="115"/>
+        </Grid.ColumnDefinitions>
+        <Frame
+          Padding="1"
+          BackgroundColor="Black"
+          Grid.Row="1"
+          Grid.Column="0">
+          <ff:CachedImage
+            Source="HelpCreateUser1.png"/>
+        </Frame>
+        <Frame
+          Padding="1"
+          BackgroundColor="Black"
+          Grid.Row="1"
+          Grid.Column="1">
+          <ff:CachedImage
+            Source="HelpCreateUser2.png"/>
+        </Frame>
+      </Grid>
+      <StackLayout>
+        <Label
+          Margin="0,10,0,20"
+          Text="Create User (Admin)"
+          TextColor="White"
+          VerticalOptions="Center"
+          HorizontalOptions="Center"
+          FontAttributes = "Bold"/>
+        <Label
+          Margin="10"
+          Text="Click the Create Button (1).  Enter First Name, Last Name, Email Address, and Password (2).  Choose Privelege status (3).  Click Create (4)."
+          TextColor="White"
+          VerticalOptions="Start"
+          HorizontalOptions="Center"/>
+      </StackLayout>
+    </StackLayout>
+  </ContentPage>
+
+  <ContentPage>
+    <StackLayout>
+      <Grid
+        RowSpacing="0"
+        Margin="55,0,0,0">
+        <Grid.RowDefinitions>
+        <RowDefinition Height="30"/>
+        <RowDefinition Height="208"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="120"/>
+        <ColumnDefinition Width="120"/>
+        </Grid.ColumnDefinitions>
+        <Frame
+          Padding="1"
+          BackgroundColor="Black"
+          Grid.Row="1"
+          Grid.Column="0">
+          <ff:CachedImage
+            Source="HelpEditUser1.png"/>
+        </Frame>
+        <Frame
+          Padding="1"
+          BackgroundColor="Black"
+          Grid.Row="1"
+          Grid.Column="1">
+          <ff:CachedImage
+            Source="HelpEditUser2.png"/>
+        </Frame>
+      </Grid>
+      <StackLayout>
+        <Label
+          Margin="0,10,0,20"
+          Text="Edit User (Admin)"
+          TextColor="White"
+          VerticalOptions="Center"
+          HorizontalOptions="Center"
+          FontAttributes = "Bold"/>
+        <Label
+          Margin="10,0,10,0"
+          Text="Enter the User Name you would like to edit (1).  Select the User (2) and you will be navigated to the Edit User Screen.  Enter First Name and Last Name (3).  Click the Change Password (4) and enter/confirm the new password (5) (if you would like to change the password).  Choose the Active Status (6).  Choose the Privilege Status (7). Click Update (8)."
+          TextColor="White"
+          VerticalOptions="Start"
+          HorizontalOptions="Center"/>
+      </StackLayout>
+    </StackLayout>
+  </ContentPage>
+
+  <ContentPage>
+    <StackLayout Orientation="Vertical">
+      <Grid
+        RowSpacing="0"
+        Margin="47,0,0,0">
+        <Grid.RowDefinitions>
+        <RowDefinition Height="30"/>
+        <RowDefinition Height="215"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="130"/>
+        <ColumnDefinition Width="130"/>
+        </Grid.ColumnDefinitions>
+        <ff:CachedImage
+          Source="HelpPreHitCount.png"
+          HorizontalOptions="CenterAndExpand"
+          Grid.Row="1"
+          Grid.Column="0"/>
+        <Frame
+          Padding="1"
+          BackgroundColor="Black"
+          Grid.Row="1"
+          Grid.Column="1">
+          <ff:CachedImage
+            Source="HelpHitCount.png"/>
+        </Frame>
+
+      </Grid>
+      <StackLayout>
+        <Label
+          Text="Hit Count"
+          Margin="0,10,0,10"
+          TextColor="White"
+          VerticalOptions="Start"
+          HorizontalOptions="Center"
+          FontAttributes = "Bold"/>
+        <Label
+          Margin="10,0,10,0"
+          Text="Access the Hit Count page from the Hamburger menu (1).  Toggle between Listen Count and Click Count (2)(3)."
+          TextColor="White"
+          VerticalOptions="Start"
+          HorizontalOptions="Center"/>
+      </StackLayout>
+    </StackLayout>
+  </ContentPage>
+
+  <ContentPage>
+    <StackLayout Orientation="Vertical">
+      <Grid
+        RowSpacing="0"
+        Margin="47,0,0,0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="30"/>
+          <RowDefinition Height="215"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="130"/>
+          <ColumnDefinition Width="130"/>
+        </Grid.ColumnDefinitions>
+        <Frame
+          Padding="1"
+          BackgroundColor="Black"
+          Grid.Row="1"
+          Grid.Column="0">
+          <ff:CachedImage
+            Source="HelpLogout1.png"/>
+        </Frame>
+        <ff:CachedImage
+          Source="HelpLogout2.png"
+          HorizontalOptions="CenterAndExpand"
+          Grid.Row="1"
+          Grid.Column="1"/>
+      </Grid>
+      <StackLayout>
+        <Label
+          Text="Logout"
+          Margin="0,10,0,10"
+          TextColor="White"
+          VerticalOptions="Start"
+          HorizontalOptions="Center"
+          FontAttributes = "Bold"/>
+        <Label
+          Margin="10,0,10,0"
+          Text="Click the Hamburger Menu from the Main Screen (1).  Click Logout in the Hamburger Menu(2)."
+          TextColor="White"
+          VerticalOptions="Start"
+          HorizontalOptions="Center"/>
+      </StackLayout>
+    </StackLayout>
+  </ContentPage>
+  
+</CarouselPage>

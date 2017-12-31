@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Administrate List"
+             x:Class="TBProj.AdministrateScreen">
+  <ContentPage.Content>
+    <StackLayout>
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="50*" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Text="User Email" Grid.Row="0" Grid.Column="0" />
+        <Label x:Name="lockedStatus" Text="Locked" Grid.Row="0" Grid.Column="1" />
+        <Label x:Name="passResetStatus" Text="Needs Password Reset" Grid.Row="0" Grid.Column="2" />
+      </Grid>
+
+      <ListView
+          x:Name="nameList">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <Grid>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="50*" />
+                  <RowDefinition Height="50*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="50*" />
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0" Grid.Row="1"
+                    VerticalOptions="FillAndExpand" Orientation="Vertical">
+                  <Label
+                  HorizontalOptions="StartAndExpand"
+                  Text="{Binding DisplayEmail}"
+                  FontSize="15" />
+                </StackLayout>
+                <StackLayout Grid.Column="1" Grid.Row="1"
+                    VerticalOptions="FillAndExpand" Orientation="Vertical">
+                  <Label
+                    HorizontalOptions="StartAndExpand"
+                    Text="{Binding DisplayLocked}"
+                    FontSize="15" />
+                </StackLayout>
+                <StackLayout Grid.Column="2" Grid.Row="1"
+                    VerticalOptions="FillAndExpand" Orientation="Vertical">
+                  <Label
+                    HorizontalOptions="StartAndExpand"
+                    Text="{Binding DisplayPassword}"
+                    FontSize="15" />
+                </StackLayout>
+              </Grid>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+      <StackLayout>
+        <Button
+      x:Name ="buttonUnlock"
+      Text="UNLOCK ACCOUNT"
+      VerticalOptions="Center"
+      HorizontalOptions="Center" >
+        </Button>
+        <Button
+      x:Name ="buttonResetTemp"
+      Text="RESET WITH TEMP PASSWORD"
+      VerticalOptions="Center"
+      HorizontalOptions="Center" >
+        </Button>
+        <Button
+      x:Name ="buttonResetPass"
+      Text="RESET WITH ENTER PASSWORD"
+      VerticalOptions="Center"
+      HorizontalOptions="Center" >
+        </Button>
+      </StackLayout>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

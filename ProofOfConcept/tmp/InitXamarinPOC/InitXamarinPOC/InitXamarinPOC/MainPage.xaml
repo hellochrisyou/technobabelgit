@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:InitXamarinPOC"
+             x:Class="InitXamarinPOC.MainPage">
+    <StackLayout Orientation="Vertical">
+
+        <Label            
+            x:Name="termName"
+            Text=""
+            VerticalOptions="StartAndExpand"
+            HorizontalOptions="Start" />
+
+        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+            <Label                        
+                        Text="Voice Test"                    
+                        VerticalOptions="Start"
+                        HorizontalOptions="Start" />
+            <Label 
+                        x:Name="textName"
+                        Text=""    
+                        VerticalOptions="StartAndExpand"
+                        HorizontalOptions="Start" />
+        </StackLayout>
+
+        <Button 
+            x:Name="awaitButton"
+            Text="Start Recording"
+            VerticalOptions="EndAndExpand"
+            Clicked="Button_Clicked"                  
+            HorizontalOptions="Center" />
+    </StackLayout>
+</ContentPage>

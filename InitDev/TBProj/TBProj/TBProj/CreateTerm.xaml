@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="TBProj.CreateTerm"
+             Title="Create Term"
+             Style="{StaticResource pageStyle}"
+             BackgroundColor="#303030">
+  <ContentPage.Content>
+    <StackLayout>
+
+
+      <Label x:Name="FloatingTermName" Style="{StaticResource EntryFloatingLabel}" Margin="34, 0, 0, 8"  Text =""/>
+      <controls:ExtendedEntry
+
+          x:Name="entryName"
+          Placeholder="Enter Term Name"
+          Focused="focusedentry"
+          Unfocused="unfocusedentry"
+          Style="{StaticResource DefaultEntry}"
+          Margin ="30, 0, 30, 0" />
+
+      <Label x:Name="FloatingDefinition" Style="{StaticResource EntryFloatingLabel}" Margin="34, 0, 0, 8"  Text =""/>
+      <Editor
+          x:Name="entryDefinition"
+          Style="{StaticResource DefaultEntry}"
+          Margin ="30, 0, 30, 0"
+          VerticalOptions="FillAndExpand"
+          Focused="focusededitor"
+          Unfocused="unfocusededitor"
+         />
+
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="30"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="30"/>
+        </Grid.ColumnDefinitions>
+
+        <Button
+            Text="CREATE"
+            Clicked="onClickSubmit"
+            Style="{StaticResource MainButtonStyle}"
+            Grid.Row ="0" Grid.Column="1">
+        </Button>
+      </Grid>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

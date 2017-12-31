@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="TBProj.CreateUser"
+             Title="Create User"
+             Style="{StaticResource pageStyle}"
+             BackgroundColor="#303030">
+  <ContentPage.Content>
+    <ScrollView>
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="30" />
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="30"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="30"/>
+        </Grid.ColumnDefinitions>
+        
+        <Label x:Name="FloatingFirstName" Style="{StaticResource EntryFloatingLabel}" Margin="4, 0, 0, 0"  Text ="" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <controls:ExtendedEntry
+            x:Name="firstName"
+            Style="{StaticResource DefaultEntry}"
+            Placeholder="Enter First Name"
+            Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"
+            Focused="focusedentry"
+            Unfocused="unfocusedentry"/>
+
+
+        <Label x:Name="FloatingLastName" Style="{StaticResource EntryFloatingLabel}" Margin="4, 0, 0, 0"  Text ="" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <controls:ExtendedEntry
+            x:Name="lastName"
+            Style="{StaticResource DefaultEntry}"
+            Placeholder="Enter Last Name"
+            Focused="focusedentry"
+            Unfocused="unfocusedentry"
+            Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+
+        <Label x:Name="FloatingEmail" Style="{StaticResource EntryFloatingLabel}" Margin="4, 0, 0, 0"  Text ="" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <controls:ExtendedEntry
+            x:Name="emailAddressName"
+            Style="{StaticResource DefaultEntry}"
+            Focused="focusedentry"
+            Unfocused="unfocusedentry"
+            Placeholder="Enter Email Address" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+
+        <Label x:Name="FloatingPassword" Style="{StaticResource EntryFloatingLabel}" Margin="4, 0, 0, 0"  Text ="" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <controls:ExtendedEntry
+            x:Name="passwordName"
+            Style="{StaticResource DefaultEntry}"
+            Placeholder="Enter Password"
+            Focused="focusedentry"
+            Unfocused="unfocusedentry"
+            IsPassword="true" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+
+        <Label x:Name="FloatingPasswordConfirm" Style="{StaticResource EntryFloatingLabel}" Margin="4, 0, 0, 0"  Text ="" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <controls:ExtendedEntry
+            x:Name="passwordConfirm"
+            Style="{StaticResource DefaultEntry}"
+            Placeholder="Confirm Password"
+            Focused="focusedentry"
+            Unfocused="unfocusedentry"
+            IsPassword="true" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+        <Label
+            Text="Privileges"
+            HorizontalOptions="Center"
+            Style="{StaticResource HeaderLabel}" TextColor="#0080FF" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+   
+          
+        <Label Text="Not Admin" HorizontalOptions="Center" Style="{StaticResource regLabel}" TextColor="#FAFAFA" Grid.Row="12" Grid.Column="1" />  
+        <Switch
+        x:Name = "privilegesCheck"
+        IsToggled="{Binding IsChecked}"
+        HorizontalOptions="Center"
+        VerticalOptions="StartAndExpand"
+        Grid.Row="12" Grid.Column="2"/>
+        <Label Text="Admin" HorizontalOptions="Center" Style="{StaticResource regLabel}" TextColor="#FAFAFA" Grid.Row="12" Grid.Column="3"/>
+
+        <Button
+            Text="CREATE"
+            Clicked="onClickSubmit"
+            Style="{StaticResource MainButtonStyle}" 
+            Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="3" >
+        </Button>
+
+        </Grid>
+
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>

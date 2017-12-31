@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="TBProj.MenuPage"
+             BackgroundColor="White">
+  <ContentPage.Content>
+    <ScrollView BackgroundColor="White">
+      <StackLayout Spacing ="0" BackgroundColor="White">
+        <Grid BackgroundColor="White">
+
+
+          <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+          </Grid.ColumnDefinitions>
+          <Image Source="MenuMaterialDesignPic.jpg" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan ="4"/>
+          <Label x:Name="username" Style="{StaticResource menuLabel}"  Grid.Row ="1" Grid.Column="0"/>
+          <Label x:Name="useremail" Style="{StaticResource menuSubLabel}"  Grid.Row ="2" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+        </Grid>
+        <Grid RowSpacing="0" BackgroundColor="White">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="1"/>
+            <RowDefinition Height="16"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+          <BoxView Grid.Row="0" Grid.Column="0" BackgroundColor="Black" />
+          <controls:ExtendedButton x:Name="menu" Image ="menu.png" Text="Main Menu" Style="{StaticResource MenuButtonStyle}" Command= "{Binding MainMenu}" Grid.Row ="2" Grid.Column ="0"/>
+          <controls:ExtendedButton x:Name="userlist" Image ="users.png" Text="User List" Style="{StaticResource MenuButtonStyle}"  Command="{Binding UserList}"  Grid.Row ="3" Grid.Column ="0" />
+          <controls:ExtendedButton x:Name="termlist" Image ="terms.png" Text="Terminology List" Style="{StaticResource MenuButtonStyle}"  Command="{Binding TermList}" Grid.Row ="4" Grid.Column ="0"/>
+          <controls:ExtendedButton x:Name="hitlist" Image ="hit.png" Text="HitCount" Style="{StaticResource MenuButtonStyle}"  Command="{Binding HitCount}" Grid.Row ="5" Grid.Column ="0" />
+          <controls:ExtendedButton x:Name="viewlast" Image ="ViewLast.png" Text="View Last Definition" Style="{StaticResource MenuButtonStyle}"  Command="{Binding View}" Grid.Row ="6" Grid.Column ="0"/>
+          <controls:ExtendedButton x:Name="help" Image ="help.png" Text="Help Menu" Style="{StaticResource MenuButtonStyle}"  Command="{Binding Help}" Grid.Row ="7" Grid.Column ="0" />
+          <controls:ExtendedButton x:Name="logout" Image ="signoff.png" Text="Logout" Style="{StaticResource MenuButtonStyle}"  Command="{Binding Logout}" Grid.Row ="8" Grid.Column ="0" />
+
+
+          <!--<Button Text="Logout" Clicked="onClickLogout"></Button>
+            <Button Text="LOGIN:Test Forgot Password" Clicked="onClickForgotPassword"></Button>-->
+
+
+        </Grid>
+      </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>

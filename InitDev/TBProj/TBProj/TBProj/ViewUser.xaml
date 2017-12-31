@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="TBProj.ViewUser"
+             Style="{StaticResource pageStyle}"
+             BackgroundColor="#303030"
+             Title="User Info">
+
+  <ContentPage.Content>
+    <StackLayout>
+      <Label Text=""/>
+      <Label Text="First Name" VerticalOptions="Start" Style="{StaticResource HeaderLabel}" TextColor="#0080FF" Margin ="30, 0, 30, 0"/>
+      <controls:ExtendedEntry x:Name="firstName" TextColor="#FAFAFA" Focused="DeselectEditor" Margin ="50, 0, 50, 0" PlaceholderTextColor="#757575"/>
+      <Label Text="Last Name"  Style="{StaticResource HeaderLabel}" TextColor="#0080FF" Margin ="30, 0, 30, 0"/>
+      <controls:ExtendedEntry x:Name="lastName" TextColor="#FAFAFA" Focused="DeselectEditor" Margin ="50, 0, 50, 0" PlaceholderTextColor="#757575"/>
+      <Label Text="Email" Style="{StaticResource HeaderLabel}" TextColor="#0080FF" Margin ="30, 0, 30, 0"/>
+      <Editor x:Name="userEmail" TextColor="#FAFAFA" Focused="DeselectEditor" Margin ="50, 0, 50, 0"/>
+      <Label Text="Admin: " Margin ="30, 0, 30, 0" Style="{StaticResource HeaderLabel}" TextColor="#0080FF"/>
+      <Grid Margin="50, 0, 50, 0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"></ColumnDefinition>
+          <ColumnDefinition Width="*"></ColumnDefinition>
+          <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Text="NO" HorizontalOptions="Center" Style="{StaticResource regLabel}" TextColor="#FAFAFA" Grid.Row="0" Grid.Column="0"/>
+        <Switch HorizontalOptions="Center" x:Name="isAdminSwitch" Toggled="DisableToggle" Grid.Row="0" Grid.Column="1"/>
+        <Label Text="YES" HorizontalOptions="Center" Style="{StaticResource regLabel}" TextColor="#FAFAFA" Grid.Row="0" Grid.Column="2"/>
+      </Grid> 
+
+    </StackLayout>
+
+  </ContentPage.Content>
+</ContentPage>

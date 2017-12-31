@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="TBProj.App">
+	<Application.Resources>
+    
+		<!-- Application resource dictionary -->
+    <ResourceDictionary>
+      <!-- FONT FAMILIES-->
+
+
+      <!-- -->
+      <Style x:Key="DefaultEntry" TargetType="controls:ExtendedEntry">
+        <Setter Property="TextColor" Value="#FAFAFA" />
+        <Setter Property="PlaceholderTextColor" Value="#757575" />
+      </Style>
+      
+      <!-- BUTTONS -->
+      <Style x:Key="MainButtonStyle" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#212121" />
+        <Setter Property="TextColor" Value="#FAFAFA" />
+      </Style>
+
+      <Style x:Key="MenuButtonStyle" TargetType="controls:ExtendedButton">
+        <Setter Property="Font" Value="14" />
+        <Setter Property="TextColor" Value="#000000" />
+        <Setter Property="BackgroundColor" Value="#FFFFFF" />
+        <Setter Property="BorderColor" Value="#Transparent" />
+        <Setter Property="HorizontalContentAlignment" Value="Start"/>
+        <Setter Property="ContentLayout" Value="Left,72" />
+      </Style>
+      
+      <!-- LABELS -->
+      <Style x:Key="SplashLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="Large" />
+        <Setter Property="TextColor" Value="#FAFAFA" />
+      </Style>
+      <Style x:Key="LoginLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="60" />
+        <Setter Property="TextColor" Value="#FAFAFA" />
+      </Style>
+      <Style x:Key="HeaderLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="Medium" />
+      </Style>
+      <Style x:Key="regLabel" TargetType="Label">
+        <Setter Property="TextColor" Value="#FAFAFA" />
+      </Style>
+      <Style x:Key="menuLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextColor" Value="#FFFFFF" />
+      </Style>
+      <Style x:Key="menuSubLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextColor" Value="#FFFFFF" />
+      </Style>
+
+      <Style x:Key="EntryFloatingLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="TextColor" Value="#FF3F80" />
+      </Style>
+
+      
+      <!-- PAGES -->
+      <Style x:Key="pageStyle" TargetType="ContentPage" ApplyToDerivedTypes="true">
+        <Setter Property="BackgroundColor" Value="#303030" />
+      </Style>
+
+    
+    </ResourceDictionary>
+	</Application.Resources>
+</Application>

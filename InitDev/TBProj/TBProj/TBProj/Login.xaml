@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="TBProj.Login"
+             Style="{StaticResource pageStyle}"
+             BackgroundImage="technobabelDarkLogin.jpg">
+
+  <ContentPage.Content>
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="80"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="60"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="10"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="40"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="40"/>
+        </Grid.ColumnDefinitions>
+
+        <Label TextColor="#FFFFFF" FontSize="40" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Text="Technobabel" Grid.Row="1" Grid.Column="1">
+          <Label.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+              <OnPlatform.iOS></OnPlatform.iOS>
+              <OnPlatform.Android>Noticia Text</OnPlatform.Android>
+            </OnPlatform>
+          </Label.FontFamily>
+        </Label>
+
+        <!--
+        <Label x:Name="FloatingUsername" Style="{StaticResource EntryFloatingLabel}" Margin="4, 0, 0, 8"  Text =""  Grid.Row="2" Grid.Column="1"/>
+        <controls:ExtendedEntry
+          Margin="0, 16, 0, 8"
+          x:Name="username"
+          Style ="{StaticResource DefaultEntry}"
+          VerticalOptions="Start"
+          Placeholder="Username" 
+          Grid.Row="2" Grid.Column="1"
+          Focused="ShowEntryForUsername"
+          Unfocused="HideEntryForUsername"/>
+
+
+        <Label x:Name="FloatingPassword" Style="{StaticResource EntryFloatingLabel}" Margin="4, 0, 0, 8" Text ="" Grid.Row="3" Grid.Column="1"/>
+        <controls:ExtendedEntry
+          Margin="0, 16, 0, 8"
+          x:Name="password"
+          Style ="{StaticResource DefaultEntry}"
+          VerticalOptions="Start"
+          Placeholder="Password"
+          IsPassword="true"
+          Grid.Row="3" Grid.Column="1"
+          Focused="ShowEntryForPassword"
+          Unfocused="HideEntryForPassword"/>
+        -->
+        
+        <Button
+          Clicked="onClickSubmit"
+          Text="LOGIN"
+          Style="{StaticResource MainButtonStyle}"
+          Grid.Row="5" Grid.Column="1"/>
+
+        <!--
+        <Button
+          Clicked="onClickForgotPassword"
+          Text="Forgot Password"
+          VerticalOptions="CenterAndExpand"
+          Style="{StaticResource MainButtonStyle}"
+          Grid.Row="7" Grid.Column="1"/>
+          -->
+      </Grid>
+  </ContentPage.Content>
+</ContentPage>

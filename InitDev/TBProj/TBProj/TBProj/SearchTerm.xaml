@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TBProj.SearchTerm"
+             Style="{StaticResource pageStyle}"
+             BackgroundImage="backgroundTech.jpg">
+    <ContentPage.Content>
+        <StackLayout>
+
+          <SearchBar
+           x:Name="searchBar"
+           TextChanged="searchChange" />
+             <ListView
+                x:Name="nameList"
+                ItemSelected="onSelect">
+                  <ListView.ItemTemplate>
+                    <DataTemplate>
+                      <ViewCell>
+                       <StackLayout Orientation="Horizontal">
+                          <Label
+                            HorizontalOptions="StartAndExpand"
+                            Text="{Binding .}"
+                            FontSize="15" />
+                       </StackLayout>
+                     </ViewCell>
+                   </DataTemplate>
+                  </ListView.ItemTemplate>
+                </ListView>
+           
+             <StackLayout Orientation="Horizontal" VerticalOptions="End">
+               <Button
+                  Text="Create"
+                  VerticalOptions="End"
+                  HorizontalOptions="StartAndExpand"
+                  Clicked="onClickCreate"
+        Style="{StaticResource buttonStyle}">
+                </Button>
+              <Button
+                Text="View"
+                HorizontalOptions="StartAndExpand"
+                Clicked="onClickView"
+        Style="{StaticResource buttonStyle}">
+              </Button>
+              <Button
+                Text="Edit"
+                HorizontalOptions="CenterAndExpand"
+                Clicked="onClickEdit"
+        Style="{StaticResource buttonStyle}">
+              </Button>
+              <Button
+                Text="Remove"
+                HorizontalOptions="End"
+                Clicked="onClickRemove"
+        Style="{StaticResource buttonStyle}">
+              </Button>
+             </StackLayout>
+        
+      </StackLayout>  
+
+    </ContentPage.Content>
+</ContentPage>

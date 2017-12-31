@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="technobabeldatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Errors">
+          <Key>
+            <PropertyRef Name="ErrorLogID" />
+          </Key>
+          <Property Name="ErrorLogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ErrorDescription" Type="varchar(max)" Nullable="false" />
+          <Property Name="ErrorTime" Type="datetime" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Function Name="authorizationTest" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="ChangeActivationTermByTermID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TermID" Type="int" Mode="In" />
+          <Parameter Name="User" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="ChangeActivationUserByUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="int" Mode="In" />
+          <Parameter Name="User" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="ChangeNeedsPassResetByUserEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="User" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="ChangeNeedsPassResetByUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="int" Mode="In" />
+          <Parameter Name="User" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="ChangePasswordByCompIDEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompID" Type="int" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="pass" Type="varchar" Mode="In" />
+          <Parameter Name="salt" Type="varchar" Mode="In" />
+          <Parameter Name="UserEmail" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="DoesUserExist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EmailAddress" Type="varchar" Mode="In" />
+          <Parameter Name="Pass" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetCompanyIDByCompanyName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="compname" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetFrequencyListByPageAndCompanyID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Page" Type="int" Mode="In" />
+          <Parameter Name="CompID" Type="int" Mode="In" />
+          <Parameter Name="Listened" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="GetFullTermListByCompanyID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetFullUserListByCompanyID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetLoginCredentialsByEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetPagesByCompanyIDListName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="compID" Type="int" Mode="In" />
+          <Parameter Name="listname" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetSaltByEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetTermIDByTermNameCompID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TermName" Type="varchar" Mode="In" />
+          <Parameter Name="CompID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetTermListByCompanyID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetTermListByPageAndCompanyID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Page" Type="int" Mode="In" />
+          <Parameter Name="CompID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetTermListBySearchCompany" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Search" Type="varchar" Mode="In" />
+          <Parameter Name="CompID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetTopTenClickedTermsByCompID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetTopTenListenedTermsByCompID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetUserListByPageAndCompanyID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Page" Type="int" Mode="In" />
+          <Parameter Name="CompID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetUserListBySearchCompany" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Search" Type="varchar" Mode="In" />
+          <Parameter Name="CompID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="IncreaseClickCountByCompIDTermName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompID" Type="int" Mode="In" />
+          <Parameter Name="TermName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="IncreaseListenCountByCompIDTermName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompID" Type="int" Mode="In" />
+          <Parameter Name="TermName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="InsertNewTerm" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CreatedUser" Type="varchar" Mode="In" />
+          <Parameter Name="compID" Type="int" Mode="In" />
+          <Parameter Name="TName" Type="varchar" Mode="In" />
+          <Parameter Name="TDecript" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="InsertNewUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CreatedUser" Type="varchar" Mode="In" />
+          <Parameter Name="CompID" Type="int" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="Pass" Type="varchar" Mode="In" />
+          <Parameter Name="Salt" Type="varchar" Mode="In" />
+          <Parameter Name="FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="LastName" Type="varchar" Mode="In" />
+          <Parameter Name="EncryptType" Type="varchar" Mode="In" />
+          <Parameter Name="IsAdmin" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="SelectTermByTermID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TermID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SelectUserByUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SelectUsersByCompanyID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="compID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TermExistByCompanyID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="term" Type="varchar" Mode="In" />
+          <Parameter Name="compID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdateTermByTermID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TermID" Type="int" Mode="In" />
+          <Parameter Name="TDescription" Type="varchar" Mode="In" />
+          <Parameter Name="ModifiedUser" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="UpdateUsersByUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="int" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="Salt" Type="varchar" Mode="In" />
+          <Parameter Name="EncryptionType" Type="varchar" Mode="In" />
+          <Parameter Name="ModifiedUser" Type="varchar" Mode="In" />
+          <Parameter Name="FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="LastName" Type="varchar" Mode="In" />
+          <Parameter Name="Admin" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="UpdateUsersByUserIDWithoutPass" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="int" Mode="In" />
+          <Parameter Name="ModifiedUser" Type="varchar" Mode="In" />
+          <Parameter Name="FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="LastName" Type="varchar" Mode="In" />
+          <Parameter Name="Admin" Type="bit" Mode="In" />
+        </Function>
+        <EntityContainer Name="technobabeldatabaseModelStoreContainer">
+          <EntitySet Name="Errors" EntityType="Self.Errors" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="technobabeldatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="technobabeldatabaseEntities5" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="DoesUserExist" ReturnType="Collection(technobabeldatabaseModel.SingleIntegerResult)">
+            <Parameter Name="EmailAddress" Mode="In" Type="String" />
+            <Parameter Name="Pass" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetSaltByEmail" ReturnType="Collection(technobabeldatabaseModel.Spices)">
+          <Parameter Name="Email" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertNewTerm" ReturnType="Collection(technobabeldatabaseModel.SingleIntegerResult)">
+            <Parameter Name="CreatedUser" Mode="In" Type="String" />
+            <Parameter Name="compID" Mode="In" Type="Int32" />
+            <Parameter Name="TName" Mode="In" Type="String" />
+            <Parameter Name="TDecript" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetLoginCredentialsByEmail" ReturnType="Collection(technobabeldatabaseModel.LoginCredentials)">
+          <Parameter Name="Email" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertNewUser" ReturnType="Collection(technobabeldatabaseModel.SingleIntegerResult)">
+            <Parameter Name="CreatedUser" Mode="In" Type="String" />
+            <Parameter Name="CompID" Mode="In" Type="Int32" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Pass" Mode="In" Type="String" />
+            <Parameter Name="Salt" Mode="In" Type="String" />
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="EncryptType" Mode="In" Type="String" />
+            <Parameter Name="IsAdmin" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="TermExistByCompanyID" ReturnType="Collection(technobabeldatabaseModel.SingleIntegerResult)">
+            <Parameter Name="term" Mode="In" Type="String" />
+            <Parameter Name="compID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ChangeActivationTermByTermID" ReturnType="Collection(technobabeldatabaseModel.SingleIntegerResult)">
+            <Parameter Name="TermID" Mode="In" Type="Int32" />
+            <Parameter Name="User" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetTermListByCompanyID" ReturnType="Collection(technobabeldatabaseModel.SingleTerm)">
+          <Parameter Name="CompID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SelectTermByTermID" ReturnType="Collection(technobabeldatabaseModel.SingleTerm)">
+          <Parameter Name="TermID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateTermByTermID" ReturnType="Collection(technobabeldatabaseModel.SingleIntegerResult)">
+            <Parameter Name="TermID" Mode="In" Type="Int32" />
+            <Parameter Name="TDescription" Mode="In" Type="String" />
+            <Parameter Name="ModifiedUser" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="IncreaseClickCountByCompIDTermName" ReturnType="Collection(technobabeldatabaseModel.SingleIntegerResult)">
+            <Parameter Name="CompID" Mode="In" Type="Int32" />
+            <Parameter Name="TermName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="IncreaseListenCountByCompIDTermName" ReturnType="Collection(technobabeldatabaseModel.SingleIntegerResult)">
+            <Parameter Name="CompID" Mode="In" Type="Int32" />
+            <Parameter Name="TermName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetTopTenClickedTermsByCompID" ReturnType="Collection(technobabeldatabaseModel.TopTenTerm)">
+          <Parameter Name="CompID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetTopTenListenedTermsByCompID" ReturnType="Collection(technobabeldatabaseModel.TopTenTerm)">
+          <Parameter Name="CompID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ChangeActivationUserByUserID" ReturnType="Collection(technobabeldatabaseModel.SingleIntegerResult)">
+            <Parameter Name="UserID" Mode="In" Type="Int32" />
+            <Parameter Name="User" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateUsersByUserID" ReturnType="Collection(technobabeldatabaseModel.SingleIntegerResult)">
+            <Parameter Name="UserID" Mode="In" Type="Int32" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Salt" Mode="In" Type="String" />
+            <Parameter Name="EncryptionType" Mode="In" Type="String" />
+            <Parameter Name="ModifiedUser" Mode="In" Type="String" />
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="Admin" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="SelectUsersByCompanyID" ReturnType="Collection(technobabeldatabaseModel.UserListItem)">
+          <Parameter Name="compID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SelectUserByUserID" ReturnType="Collection(technobabeldatabaseModel.UserListView)">
+          <Parameter Name="UserID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetTermIDByTermNameCompID" ReturnType="Collection(technobabeldatabaseModel.TermIDResult)">
+            <Parameter Name="TermName" Mode="In" Type="String" />
+            <Parameter Name="CompID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetTermListByPageAndCompanyID" ReturnType="Collection(technobabeldatabaseModel.TermList)">
+            <Parameter Name="Page" Mode="In" Type="Int32" />
+            <Parameter Name="CompID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetTermListBySearchCompany" ReturnType="Collection(technobabeldatabaseModel.TermList)">
+            <Parameter Name="Search" Mode="In" Type="String" />
+            <Parameter Name="CompID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="Errors" EntityType="technobabeldatabaseModel.Error" />
+          <FunctionImport Name="GetPagesByCompanyIDListName" ReturnType="Collection(technobabeldatabaseModel.SingleIntegerResult)">
+            <Parameter Name="compID" Mode="In" Type="Int32" />
+            <Parameter Name="listname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ChangePasswordByCompIDEmail" ReturnType="Collection(technobabeldatabaseModel.SingleIntegerResult)">
+            <Parameter Name="CompID" Mode="In" Type="Int32" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="pass" Mode="In" Type="String" />
+            <Parameter Name="salt" Mode="In" Type="String" />
+            <Parameter Name="UserEmail" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateUsersByUserIDWithoutPass" ReturnType="Collection(technobabeldatabaseModel.SingleIntegerResult)">
+            <Parameter Name="UserID" Mode="In" Type="Int32" />
+            <Parameter Name="ModifiedUser" Mode="In" Type="String" />
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="Admin" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="ChangeNeedsPassResetByUserID" ReturnType="Collection(technobabeldatabaseModel.SingleIntegerResult)">
+            <Parameter Name="UserID" Mode="In" Type="Int32" />
+            <Parameter Name="User" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetUserListByPageAndCompanyID" ReturnType="Collection(technobabeldatabaseModel.UserListItem)">
+            <Parameter Name="Page" Mode="In" Type="Int32" />
+            <Parameter Name="CompID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetUserListBySearchCompany" ReturnType="Collection(technobabeldatabaseModel.UserListItem)">
+            <Parameter Name="Search" Mode="In" Type="String" />
+            <Parameter Name="CompID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetFrequencyListByPageAndCompanyID" ReturnType="Collection(technobabeldatabaseModel.FrequencyCombinedListItem)">
+            <Parameter Name="Page" Mode="In" Type="Int32" />
+            <Parameter Name="CompID" Mode="In" Type="Int32" />
+            <Parameter Name="Listened" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="ChangeNeedsPassResetByUserEmail" ReturnType="Collection(technobabeldatabaseModel.SingleIntegerResult)">
+          <Parameter Name="User" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="authorizationTest" ReturnType="Collection(technobabeldatabaseModel.SingleIntegerResult)" />
+          <FunctionImport Name="GetFullTermListByCompanyID" ReturnType="Collection(technobabeldatabaseModel.FullTermList)">
+          <Parameter Name="CompID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetFullUserListByCompanyID" ReturnType="Collection(technobabeldatabaseModel.FullUserList)">
+          <Parameter Name="CompID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetCompanyIDByCompanyName" ReturnType="Collection(technobabeldatabaseModel.SingleCompanyIDResult)">
+            <Parameter Name="compname" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="SingleIntegerResult" >
+          <Property Type="Int32" Name="Result" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Spices">
+          <Property Type="String" Name="Salt" Nullable="false" MaxLength="64" />
+        </ComplexType>
+        <ComplexType Name="LoginCredentials">
+          <Property Type="Int32" Name="CompanyID" Nullable="false" />
+          <Property Type="String" Name="CompanyName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="RightName" Nullable="false" MaxLength="100" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="TermList">
+          <Property Type="Int32" Name="TermID" Nullable="false" />
+          <Property Type="String" Name="TermName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="TermDescription" Nullable="false" MaxLength="1000" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="SingleTerm">
+          <Property Type="String" Name="TermName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="TermDescription" Nullable="false" MaxLength="1000" />
+        </ComplexType>
+        <ComplexType Name="TopTenTerm">
+          <Property Type="Int32" Name="TermID" Nullable="false" />
+          <Property Type="String" Name="TermName" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="VerbalHitCount" Nullable="false" />
+          <Property Type="Int32" Name="ClickHitCount" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="UserListItem">
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="UserListView">
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="isAdmin" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="TermIDResult">
+          <Property Type="Int32" Name="TermID" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="Error">
+          <Key>
+            <PropertyRef Name="ErrorLogID" />
+          </Key>
+          <Property Name="ErrorLogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ErrorDescription" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ErrorTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="FrequencyCombinedListItem">
+          <Property Type="Int32" Name="TermID" Nullable="true" />
+          <Property Type="String" Name="TermName" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="ListenCount" Nullable="true" />
+          <Property Type="Int32" Name="ClickCount" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="TermNames">
+          <Property Type="String" Name="TermName" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="FullTermList">
+          <Property Type="Int32" Name="TermID" Nullable="false" />
+          <Property Type="String" Name="TermName" Nullable="false" MaxLength="100" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="FullUserList">
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="100" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="SingleCompanyIDResult">
+          <Property Type="Int32" Name="CompanyID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="technobabeldatabaseModelStoreContainer" CdmEntityContainer="technobabeldatabaseEntities5">
+          <FunctionImportMapping FunctionImportName="DoesUserExist" FunctionName="technobabeldatabaseModel.Store.DoesUserExist" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.SingleIntegerResult">
+                <ScalarProperty Name="Result" ColumnName="Result" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetSaltByEmail" FunctionName="technobabeldatabaseModel.Store.GetSaltByEmail" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.Spices">
+                <ScalarProperty Name="Salt" ColumnName="Salt" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertNewTerm" FunctionName="technobabeldatabaseModel.Store.InsertNewTerm" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.SingleIntegerResult">
+                <ScalarProperty Name="Result" ColumnName="Result" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetLoginCredentialsByEmail" FunctionName="technobabeldatabaseModel.Store.GetLoginCredentialsByEmail">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.LoginCredentials">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="RightName" ColumnName="RightName" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertNewUser" FunctionName="technobabeldatabaseModel.Store.InsertNewUser" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.SingleIntegerResult">
+                <ScalarProperty Name="Result" ColumnName="Result" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TermExistByCompanyID" FunctionName="technobabeldatabaseModel.Store.TermExistByCompanyID" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.SingleIntegerResult">
+                <ScalarProperty Name="Result" ColumnName="Result" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ChangeActivationTermByTermID" FunctionName="technobabeldatabaseModel.Store.ChangeActivationTermByTermID" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.SingleIntegerResult">
+                <ScalarProperty Name="Result" ColumnName="Result" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetTermListByCompanyID" FunctionName="technobabeldatabaseModel.Store.GetTermListByCompanyID">
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.SingleTerm">
+                <ScalarProperty Name="TermName" ColumnName="TermName" />
+                <ScalarProperty Name="TermDescription" ColumnName="TermDescription" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectTermByTermID" FunctionName="technobabeldatabaseModel.Store.SelectTermByTermID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.SingleTerm">
+                <ScalarProperty Name="TermName" ColumnName="TermName" />
+                <ScalarProperty Name="TermDescription" ColumnName="TermDescription" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UpdateTermByTermID" FunctionName="technobabeldatabaseModel.Store.UpdateTermByTermID" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.SingleIntegerResult">
+                <ScalarProperty Name="Result" ColumnName="Result" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="IncreaseClickCountByCompIDTermName" FunctionName="technobabeldatabaseModel.Store.IncreaseClickCountByCompIDTermName" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.SingleIntegerResult">
+                <ScalarProperty Name="Result" ColumnName="Result" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="IncreaseListenCountByCompIDTermName" FunctionName="technobabeldatabaseModel.Store.IncreaseListenCountByCompIDTermName" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.SingleIntegerResult">
+                <ScalarProperty Name="Result" ColumnName="Result" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetTopTenClickedTermsByCompID" FunctionName="technobabeldatabaseModel.Store.GetTopTenClickedTermsByCompID">
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.TopTenTerm">
+                <ScalarProperty Name="TermID" ColumnName="TermID" />
+                <ScalarProperty Name="TermName" ColumnName="TermName" />
+                <ScalarProperty Name="VerbalHitCount" ColumnName="VerbalHitCount" />
+                <ScalarProperty Name="ClickHitCount" ColumnName="ClickHitCount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetTopTenListenedTermsByCompID" FunctionName="technobabeldatabaseModel.Store.GetTopTenListenedTermsByCompID">
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.TopTenTerm">
+                <ScalarProperty Name="TermID" ColumnName="TermID" />
+                <ScalarProperty Name="TermName" ColumnName="TermName" />
+                <ScalarProperty Name="VerbalHitCount" ColumnName="VerbalHitCount" />
+                <ScalarProperty Name="ClickHitCount" ColumnName="ClickHitCount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ChangeActivationUserByUserID" FunctionName="technobabeldatabaseModel.Store.ChangeActivationUserByUserID" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.SingleIntegerResult">
+                <ScalarProperty Name="Result" ColumnName="Result" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UpdateUsersByUserID" FunctionName="technobabeldatabaseModel.Store.UpdateUsersByUserID" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.SingleIntegerResult">
+                <ScalarProperty Name="Result" ColumnName="Result" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectUsersByCompanyID" FunctionName="technobabeldatabaseModel.Store.SelectUsersByCompanyID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.UserListItem">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectUserByUserID" FunctionName="technobabeldatabaseModel.Store.SelectUserByUserID">
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.UserListView">
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetTermIDByTermNameCompID" FunctionName="technobabeldatabaseModel.Store.GetTermIDByTermNameCompID" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.TermIDResult">
+                <ScalarProperty Name="TermID" ColumnName="TermID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetTermListByPageAndCompanyID" FunctionName="technobabeldatabaseModel.Store.GetTermListByPageAndCompanyID">
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.TermList">
+                <ScalarProperty Name="TermID" ColumnName="TermID" />
+                <ScalarProperty Name="TermName" ColumnName="TermName" />
+                <ScalarProperty Name="TermDescription" ColumnName="TermDescription" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetTermListBySearchCompany" FunctionName="technobabeldatabaseModel.Store.GetTermListBySearchCompany">
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.TermList">
+                <ScalarProperty Name="TermID" ColumnName="TermID" />
+                <ScalarProperty Name="TermName" ColumnName="TermName" />
+                <ScalarProperty Name="TermDescription" ColumnName="TermDescription" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Errors">
+            <EntityTypeMapping TypeName="technobabeldatabaseModel.Error">
+              <MappingFragment StoreEntitySet="Errors">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ErrorTime" ColumnName="ErrorTime" />
+                <ScalarProperty Name="ErrorDescription" ColumnName="ErrorDescription" />
+                <ScalarProperty Name="ErrorLogID" ColumnName="ErrorLogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetPagesByCompanyIDListName" FunctionName="technobabeldatabaseModel.Store.GetPagesByCompanyIDListName" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.SingleIntegerResult">
+                <ScalarProperty Name="Result" ColumnName="Result" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ChangePasswordByCompIDEmail" FunctionName="technobabeldatabaseModel.Store.ChangePasswordByCompIDEmail" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.SingleIntegerResult">
+                <ScalarProperty Name="Result" ColumnName="Result" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UpdateUsersByUserIDWithoutPass" FunctionName="technobabeldatabaseModel.Store.UpdateUsersByUserIDWithoutPass" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.SingleIntegerResult">
+                <ScalarProperty Name="Result" ColumnName="Result" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ChangeNeedsPassResetByUserID" FunctionName="technobabeldatabaseModel.Store.ChangeNeedsPassResetByUserID" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.SingleIntegerResult">
+                <ScalarProperty Name="Result" ColumnName="Result" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetUserListByPageAndCompanyID" FunctionName="technobabeldatabaseModel.Store.GetUserListByPageAndCompanyID">
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.UserListItem">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetUserListBySearchCompany" FunctionName="technobabeldatabaseModel.Store.GetUserListBySearchCompany">
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.UserListItem">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetFrequencyListByPageAndCompanyID" FunctionName="technobabeldatabaseModel.Store.GetFrequencyListByPageAndCompanyID">
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.FrequencyCombinedListItem">
+                <ScalarProperty Name="TermID" ColumnName="TermID" />
+                <ScalarProperty Name="TermName" ColumnName="TermName" />
+                <ScalarProperty Name="ListenCount" ColumnName="ListenCount" />
+                <ScalarProperty Name="ClickCount" ColumnName="ClickCount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ChangeNeedsPassResetByUserEmail" FunctionName="technobabeldatabaseModel.Store.ChangeNeedsPassResetByUserEmail" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.SingleIntegerResult">
+                <ScalarProperty Name="Result" ColumnName="Result" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="authorizationTest" FunctionName="technobabeldatabaseModel.Store.authorizationTest" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.SingleIntegerResult">
+                <ScalarProperty Name="Result" ColumnName="Result" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetFullTermListByCompanyID" FunctionName="technobabeldatabaseModel.Store.GetFullTermListByCompanyID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.FullTermList">
+                <ScalarProperty Name="TermID" ColumnName="TermID" />
+                <ScalarProperty Name="TermName" ColumnName="TermName" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetFullUserListByCompanyID" FunctionName="technobabeldatabaseModel.Store.GetFullUserListByCompanyID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.FullUserList">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetCompanyIDByCompanyName" FunctionName="technobabeldatabaseModel.Store.GetCompanyIDByCompanyName" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="technobabeldatabaseModel.SingleCompanyIDResult">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

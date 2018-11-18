@@ -1,4 +1,6 @@
 # Technobabel
 Mobile application written in C# using Xamarin (Shared library) via Asp.net Web API with Entity Framework to interact with Microsoft Azure to make queries with the database (SQL Server). It utilizes the voice recorder to recognize and display terminology definitions from the database.
 
-![myimage-alt-tag](https://s3.amazonaws.com/chrisyou.com/assets/TechnoBabel.png)
+<p align="center">
+  <img width="460" height="300" src="https://s3.amazonaws.com/chrisyou.com/assets/TechnoBabel.png">
+</p>

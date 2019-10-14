@@ -2,7 +2,6 @@
 	- Asp.net Web API
 		- Backend
 			- Rest API
-		- Framework that makes it easy to build HTTP services that reach a broad range of clients, including browsers and mobile devices.
 		- MVC
 			- Model
 				- Entity Framework
